@@ -13,7 +13,7 @@ type Payment = {
   method: string;
 };
 
-export const data: Payment[] = [
+const data: Payment[] = [
   {
     name: "John Doe",
     email: "john@example.com",
@@ -88,7 +88,7 @@ export const data: Payment[] = [
   },
 ];
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "name",
     header: "Name",

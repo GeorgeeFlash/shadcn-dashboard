@@ -10,7 +10,7 @@ type Setting = {
   value: string | number | boolean;
 };
 
-export const data: Setting[] = [
+const data: Setting[] = [
   {
     category: "Account",
     value: true,
@@ -29,7 +29,7 @@ export const data: Setting[] = [
   },
 ];
 
-export const columns: ColumnDef<Setting>[] = [
+const columns: ColumnDef<Setting>[] = [
   {
     accessorKey: "category",
     header: "Category",
