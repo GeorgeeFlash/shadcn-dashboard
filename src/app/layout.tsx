@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import SideNavbar from "@/components/SideNavbar";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +29,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(
+          `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full bg-white text-black flex`,
+          { "debug-screens": process.env.NODE_ENV === "development" }
+        )}
       >
-        {children}
+        <TooltipProvider>
+          {/* SIdebar */}
+          <SideNavbar />
+          {/* main page */}
+          <div className="p-8 w-full">{children}</div>
+        </TooltipProvider>
       </body>
     </html>
   );
