@@ -70,7 +70,7 @@ const SideNavbar = () => {
   }
 
   return (
-    <div
+    <aside
       data-isCollapsed={isCollapsed || isMobile}
       className="relative data-[isCollapsed=true]:w-[80px] data-[isCollapsed=true]:animate-in data-[isCollapsed=false]:animate-out data-[isCollapsed=false]:min-w-[250px] border-r px-3 my-2 pb-10 pt-24"
     >
@@ -104,7 +104,7 @@ const SideNavbar = () => {
         </Sheet>
       )}
       <Nav isCollapsed={isMobile || isCollapsed} links={links} />
-    </div>
+    </aside>
   );
 };
 
