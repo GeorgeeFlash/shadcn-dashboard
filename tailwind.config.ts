@@ -77,6 +77,8 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "animate-in": "animate-in 0.5s ease-in",
+        "animate-out": "animate-out 0.5s ease-out",
       },
     },
   },
