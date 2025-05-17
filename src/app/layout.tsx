@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import SideNavbar from "@/components/SideNavbar";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,19 +28,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full bg-white text-black flex`,
+          `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen w-full bg-white text-black flex flex-col`,
           { "debug-screens": process.env.NODE_ENV === "development" }
         )}
       >
-        <TooltipProvider>
-          {/* SIdebar */}
-          <SideNavbar />
-          {/* main page */}
-          <div className="p-8 w-full">{children}</div>
-        </TooltipProvider>
+          <TooltipProvider>
+            <div className="flex flex-1">
+              {/* Sidebar */}
+              <SideNavbar />
+
+              {/* main page */}
+              <div className="p-8 w-full">{children}</div>
+            </div>
+            <Footer />
+          </TooltipProvider>
       </body>
     </html>
   );
